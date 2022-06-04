@@ -6,20 +6,25 @@ const PORT = 8000
 
 
 const rappers = {
-    '21 savage': {
-        'age': 29,
-        'birthName': 'Shéyaa Bin Abraham-Joseph',
-        'birthLocation': 'London, England'
+    'Hajime': {
+    'name': 'Hajime',
+    'address': '4170 W Division St #130, St Cloud, MN 56301'
     },
-    'chance the rapper':{
-        'age': 29,
-        'birthName': 'Chancelor Bennett',
-        'birthLocation': 'Chicago, Illinois' 
+    'Renaissance': {
+    'name': 'Renaissance',
+    'address': '2140 Frontage Rd N, Waite Park, MN 56387'
     },
-    'unknown':{
-        'age': 0,
-        'birthName': 'unknown',
-        'birthLocation': 'unknown'
+    'Molitors':	{
+    'name': 'Molitors',
+    'address': '3571 5th Ave NE, Sauk Rapids, MN 56379'
+    },
+    'Kohinoor':	{
+    'name': 'Kohinoor',
+    'address': '17 7th Ave S, St Cloud, MN 56301'
+    },
+    'Olde Brick House':	{
+    'name': 'Olde Brick House',
+    'address': '102 6th Ave S, St Cloud, MN 56301'
     }
 }
 let randNumberForObject = Math.floor(Math.random() * (Object.keys(rappers).length))
