@@ -9,23 +9,28 @@ app.use(cors())
 const rappers = {
     'Hajime': {
     'name': 'Hajime',
-    'address': '4170 W Division St #130, St Cloud, MN 56301'
+    'address': '4170 W Division St #130, St Cloud, MN 56301',
+    'googleMapsLink':'https://goo.gl/maps/HLsf32gxfVRW6pFbA'
     },
     'Renaissance': {
     'name': 'Renaissance',
-    'address': '2140 Frontage Rd N, Waite Park, MN 56387'
+    'address': '2140 Frontage Rd N, Waite Park, MN 56387',
+    'googleMapsLink':'https://goo.gl/maps/9hvB6gnCCfgTXJ7Q9'
     },
     'Molitors':	{
     'name': 'Molitors',
-    'address': '3571 5th Ave NE, Sauk Rapids, MN 56379'
+    'address': '3571 5th Ave NE, Sauk Rapids, MN 56379',
+    'googleMapsLink':'https://goo.gl/maps/ob7a8Vv6XJ8ZwCyB8'
     },
     'Kohinoor':	{
     'name': 'Kohinoor',
-    'address': '17 7th Ave S, St Cloud, MN 56301'
+    'address': '17 7th Ave S, St Cloud, MN 56301',
+    'googleMapsLink':'https://goo.gl/maps/ksqd5oMKkfNiW4yN7'
     },
     'Olde Brick House':	{
     'name': 'Olde Brick House',
-    'address': '102 6th Ave S, St Cloud, MN 56301'
+    'address': '102 6th Ave S, St Cloud, MN 56301',
+    'googleMapsLink': 'https://goo.gl/maps/drBCd7hMgRQU6iWt6'
     }
 }
 let randNumberForObject = Math.floor(Math.random() * (Object.keys(rappers).length))
