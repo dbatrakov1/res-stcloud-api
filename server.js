@@ -10,29 +10,34 @@ const rappers = {
     'Hajime': {
     'name': 'Hajime',
     'address': '4170 W Division St #130, St Cloud, MN 56301',
-    'googleMapsLink':'https://goo.gl/maps/HLsf32gxfVRW6pFbA'
+    'googleMapsLink':'https://goo.gl/maps/HLsf32gxfVRW6pFbA',
+    'meal': '[dinner, lunch]'
     },
     'Renaissance': {
     'name': 'Renaissance',
     'address': '2140 Frontage Rd N, Waite Park, MN 56387',
-    'googleMapsLink':'https://goo.gl/maps/9hvB6gnCCfgTXJ7Q9'
+    'googleMapsLink':'https://goo.gl/maps/9hvB6gnCCfgTXJ7Q9',
+    'meal': '[dinner]'
     },
     'Molitors':	{
     'name': 'Molitors',
     'address': '3571 5th Ave NE, Sauk Rapids, MN 56379',
-    'googleMapsLink':'https://goo.gl/maps/ob7a8Vv6XJ8ZwCyB8'
+    'googleMapsLink':'https://goo.gl/maps/ob7a8Vv6XJ8ZwCyB8',
+    'meal': '[dinner]'
     },
     'Kohinoor':	{
     'name': 'Kohinoor',
     'address': '17 7th Ave S, St Cloud, MN 56301',
-    'googleMapsLink':'https://goo.gl/maps/ksqd5oMKkfNiW4yN7'
+    'googleMapsLink':'https://goo.gl/maps/ksqd5oMKkfNiW4yN7',
+    'meal': '[dinner]'
     },
     'Olde Brick House':	{
     'name': 'Olde Brick House',
     'address': '102 6th Ave S, St Cloud, MN 56301',
-    'googleMapsLink': 'https://goo.gl/maps/drBCd7hMgRQU6iWt6'
+    'googleMapsLink': 'https://goo.gl/maps/drBCd7hMgRQU6iWt6',
+    'meal': '[dinner, lunch]'
     }
-}
+ }
 let randNumberForObject = Math.floor(Math.random() * (Object.keys(rappers).length))
 
 //function return random key (Each key-value pair is called a property.)
@@ -42,13 +47,32 @@ function getRandomProperty(obj) {
 }
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
+//
+function filterRestByMeal(obj, meal){
+    let objecForCurrentMeal = Object.values(obj).filter(o => {
+        if(Object.values(o)[3].includes(meal)){
+            return o
+        }
+    })
+    return objecForCurrentMeal
+}
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
 app.get('/', (request, response)=>{
     response.sendFile(__dirname + '/index.html')
 })
 
-//sent rendom property
-app.get('/random', (request, response) =>{
-    response.json(rappers[getRandomProperty(rappers)])
+//sent rendom property for lunch
+app.get('/random/lunch', (request, response) =>{
+    let newRappers= filterRestByMeal(rappers,'lunch')
+    response.json(newRappers[getRandomProperty(newRappers)])
+})
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+//sent rendom property for dinner
+app.get('/random/dinner', (request, response) =>{
+    let newRappers= filterRestByMeal(rappers,'dinner')
+    response.json(newRappers[getRandomProperty(newRappers)])
 })
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
