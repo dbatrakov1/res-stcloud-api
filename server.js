@@ -36,7 +36,26 @@ const rappers = {
     'address': '102 6th Ave S, St Cloud, MN 56301',
     'googleMapsLink': 'https://goo.gl/maps/drBCd7hMgRQU6iWt6',
     'meal': '[dinner, lunch]'
+    },
+    'Olive Garden':	{
+    'name': 'Olive Garden',
+    'address': '12 Division St, Waite Park, MN 56387',
+    'googleMapsLink': 'https://goo.gl/maps/9Q9Zyk2zqTXeKWsz7',
+    'meal': '[lunch]'
+    },
+    'Krewe': {
+    'name': 'Krewe',
+    'address': '24 College Ave N, St Joseph, MN 56374',
+    'googleMapsLink': 'https://goo.gl/maps/Hay1A3D4VKS9GTXSA',
+    'meal': '[dinner]'
+    },
+    'Bello Cucina': {
+    'name': 'Bello Cucina',
+    'address': '15 E Minnesota St, St Joseph, MN 56374',
+    'googleMapsLink': 'https://goo.gl/maps/RPV8nkkNhJevExjk6',
+    'meal': '[dinner, lunch]'
     }
+
  }
 let randNumberForObject = Math.floor(Math.random() * (Object.keys(rappers).length))
 
