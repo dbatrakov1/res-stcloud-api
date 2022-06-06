@@ -54,6 +54,18 @@ const rappers = {
     'address': '15 E Minnesota St, St Joseph, MN 56374',
     'googleMapsLink': 'https://goo.gl/maps/RPV8nkkNhJevExjk6',
     'meal': '[dinner, lunch]'
+    },
+    'Kays Midtown': {
+    'name': 'Kays Midtown',
+    'address': '3333 W Division St, St Cloud, MN 56301',
+    'googleMapsLink': 'https://goo.gl/maps/6Q77RZGuhH53dsa19',
+    'meal': '[breakfast]'
+    },
+    'Jules Bistro': {
+    'name': 'Jules Bistro',
+    'address': '921 W St Germain St, St Cloud, MN 56301',
+    'googleMapsLink': 'https://goo.gl/maps/XBLnYaoX1ZytJjPj9',
+    'meal': '[breakfast]'
     }
 
  }
@@ -80,7 +92,11 @@ function filterRestByMeal(obj, meal){
 app.get('/', (request, response)=>{
     response.sendFile(__dirname + '/index.html')
 })
-
+//sent rendom property for breakfast
+app.get('/random/breakfast', (request, response) =>{
+    let newRappers= filterRestByMeal(rappers,'breakfast')
+    response.json(newRappers[getRandomProperty(newRappers)])
+})
 //sent rendom property for lunch
 app.get('/random/lunch', (request, response) =>{
     let newRappers= filterRestByMeal(rappers,'lunch')
