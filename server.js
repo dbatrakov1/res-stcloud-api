@@ -6,7 +6,7 @@ const PORT = 8000
 
 app.use(cors())
 
-const rappers = {
+const resturant = {
     'Hajime': {
     'name': 'Hajime',
     'address': '4170 W Division St #130, St Cloud, MN 56301',
@@ -69,7 +69,7 @@ const rappers = {
     }
 
  }
-let randNumberForObject = Math.floor(Math.random() * (Object.keys(rappers).length))
+let randNumberForObject = Math.floor(Math.random() * (Object.keys(resturant).length))
 
 //function return random key (Each key-value pair is called a property.)
 function getRandomProperty(obj) {
@@ -94,36 +94,36 @@ app.get('/', (request, response)=>{
 })
 //sent rendom property for breakfast
 app.get('/random/breakfast', (request, response) =>{
-    let newRappers= filterRestByMeal(rappers,'breakfast')
-    response.json(newRappers[getRandomProperty(newRappers)])
+    let newResturant= filterRestByMeal(resturant,'breakfast')
+    response.json(newResturant[getRandomProperty(newResturant)])
 })
 //sent rendom property for lunch
 app.get('/random/lunch', (request, response) =>{
-    let newRappers= filterRestByMeal(rappers,'lunch')
-    response.json(newRappers[getRandomProperty(newRappers)])
+    let newResturant= filterRestByMeal(resturant,'lunch')
+    response.json(newResturant[getRandomProperty(newResturant)])
 })
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 //sent rendom property for dinner
 app.get('/random/dinner', (request, response) =>{
-    let newRappers= filterRestByMeal(rappers,'dinner')
-    response.json(newRappers[getRandomProperty(newRappers)])
+    let newResturant= filterRestByMeal(resturant,'dinner')
+    response.json(newResturant[getRandomProperty(newResturant)])
 })
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 app.get('/api/:name',(request,response)=>{
-    const rapperName = request.params.name.toLowerCase()
+    const resturantName = request.params.name.toLowerCase()
 
-    if( rappers[rapperName] ){
-        response.json(rappers[rapperName])
+    if( resturant[resturantName] ){
+        response.json(resturant[resturantName])
     }else{
-        response.json(rappers['unknown'])
+        response.json(resturant['unknown'])
     }
     
 })
 
 app.listen(process.env.PORT || PORT, ()=>{
     console.log(`The server is now running on port ${PORT}! Betta Go Catch It!`)
-    console.log(Object.keys(rappers).length)//return object rappers length
+    console.log(Object.keys(resturant).length)//return object resturant length
     console.log(randNumberForObject)
 })
