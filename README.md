@@ -1,5 +1,4 @@
 # res-stcloud-api
-# res-stcloud-api
 It is a resturant adviser API. 
 
 **Link to project:** https://rest-stcloud-api.herokuapp.com/
